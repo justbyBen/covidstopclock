@@ -13,20 +13,16 @@ function tick() {
     const minutesAgo = moment(Date.now()).diff(startOfCovidInMillis, "minutes");
     const hoursAgo = moment(Date.now()).diff(startOfCovidInMillis, "hours");
     const daysAgo = moment(Date.now()).diff(startOfCovidInMillis, "days");
-    const monthsAgo = moment(Date.now()).diff(startOfCovidInMillis, "months");
-    const yearsAgo = moment(Date.now()).diff(startOfCovidInMillis, "years");
     
     const timeBetween = moment.preciseDiff(new Date(startOfCovidInMillis), Date.now(), true);
     
     const element = (
       <div>
-        <h1>First covid infect was {secondsAgo} seconds ago!</h1>
+        <h1>First covid infection was {secondsAgo} seconds ago!</h1>
         <h2>That's about {minutesAgo} minutes or,</h2>
         <h2>{hoursAgo} hours or,</h2>
-        <h2>{daysAgo} days or,</h2>
-        <h2>{monthsAgo} months or</h2>
-        <h2>{yearsAgo} years</h2>
-        <h2>That was {timeBetween.years} years {timeBetween.months} months {timeBetween.days} days {timeBetween.hours} hours {timeBetween.minutes} minutes and {timeBetween.seconds} ago!</h2>
+        <h2>{daysAgo} days ago</h2>
+        <h2>It was exactly {timeBetween.years} years {timeBetween.months} months {timeBetween.days} days {timeBetween.hours} hours {timeBetween.minutes} minutes and {timeBetween.seconds} ago!</h2>
       </div>
     );
     ReactDOM.render(element, document.getElementById('root'));
